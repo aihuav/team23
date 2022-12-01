@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OpenStreetMapとLeafletで地図にピンを立てる</title>
+    <meta charset="utf-8">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
+  </head>
+  <body>
+    <div id="view_map" style="height: 350px;"></div>
+    <script type="text/javascript">
+    //緯度,経度,ズーム
+    var map = L.map('view_map').setView([35.658577, 139.745451], 12);
+    // OpenStreetMap から地図画像を読み込む
+    L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, '
+    }).addTo(map);
+    
+    var popup = L.popup();
+    L.marker([35.6575529, 139.7040404]).addTo(map).on('click', function (e) {
+          popup
+              .setLatLng(e.latlng)
+              .setContent("CAFE de CRIE 渋谷三丁目店")
+              .openOn(map);
+    });
+    var popup = L.popup();
+    L.marker([35.6574409, 139.7031387]).addTo(map).on('click', function (e) {
+          popup
+              .setLatLng(e.latlng)
+              .setContent("DEAN & DELUCA 渋谷ストリーム店")
+              .openOn(map);
+    });
+    var popup = L.popup();
+    L.marker([35.6598515, 139.7029622]).addTo(map).on('click', function (e) {
+          popup
+              .setLatLng(e.latlng)
+              .setContent("EXCELSIOR CAFE 渋谷宮益坂店")
+              .openOn(map);
+    });
+    var popup = L.popup();
+    L.marker([35.6560142, 139.7015258]).addTo(map).on('click', function (e) {
+          popup
+              .setLatLng(e.latlng)
+              .setContent("ルノアール　渋谷南口店")
+              .openOn(map);
+    });
+    var popup = L.popup();
+    L.marker([35.6564327, 139.7054596]).addTo(map).on('click', function (e) {
+          popup
+              .setLatLng(e.latlng)
+              .setContent("STARBUCKS 渋谷三丁目店")
+              .openOn(map);
+    });
+    var popup = L.popup();
+    L.marker([35.6577223, 139.7027338]).addTo(map).on('click', function (e) {
+          popup
+              .setLatLng(e.latlng)
+              .setContent("Cafe Miyama 渋谷東口駅前店")
+              .openOn(map);
+    });
+    var popup = L.popup();
+    L.marker([35.6581383, 139.7001468]).addTo(map).on('click', function (e) {
+          popup
+              .setLatLng(e.latlng)
+              .setContent("CAFE DE REPE")
+              .openOn(map);
+    });
+    var popup = L.popup();
+    L.marker([35.6615554, 139.7024669]).addTo(map).on('click', function (e) {
+          popup
+              .setLatLng(e.latlng)
+              .setContent("PRONT 渋谷宮下公園店")
+              .openOn(map);
+    });
+  </script>
+  </body>
+</html>
