@@ -243,13 +243,14 @@ div ul li a:hover {
 }
  
 .card_item_body > .card_item_time {
-  font-size: 15px;
+　color: #000000;
+  font-size: 20px;
   margin-bottom: 5px;
   display: block;
 }
  
 .card_item_body > .card_item_ttl {
-  color: #333;
+  color: #777;
   font-size: 7px;
   font-weight: bold;
   line-height: 1.5;
@@ -260,7 +261,7 @@ div ul li a:hover {
 }
  
 .card_item_body > .card_item_txt {
-  color: #777;
+  color: #333;
   font-size: 15px;
   line-height: 1.5;
   margin-bottom: 10px;
