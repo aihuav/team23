@@ -63,6 +63,83 @@
 	</ul>
 
 </div>
+
+<!--絞り込み検索----------------------------------------------------------------------------------------------------
+<script>
+var searchBox = '.search-box';
+var searchItem = '.search-box input';
+var listItem = '.cat_image';
+var hideClass = 'is-hide';
+
+$(function() {
+   $(document).on('change', searchBox + ' input', function() {
+    search_filter();
+  });
+});
+
+function search_filter() {
+  $(listItem).removeClass(hideClass);
+  for (var i = 0; i < $(searchBox).length; i++) {
+    var name = $(searchBox).eq(i).find('input').attr('name');
+    var searchData = get_selected_input_items(name);
+    if(searchData.length === 0 || searchData[0] === '') {
+      continue;
+    }
+    for (var j = 0; j < $(listItem).length; j++) {
+      var itemData = get_setting_values_in_item($(listItem).eq(j), name);
+      var check = array_match_check(itemData, searchData);
+      if(!check) {
+        $(listItem).eq(j).addClass(hideClass);
+      }
+    }
+  }
+}
+
+function get_selected_input_items(name) {
+  var searchData = [];
+  $('[name=' + name + ']:checked').each(function() {
+    searchData.push($(this).val());
+  });
+  return searchData;
+}
+
+function get_setting_values_in_item(target, data) {
+  var itemData = target.data(data);
+  if(!Array.isArray(itemData)) {
+    itemData = [itemData];
+  }
+  return itemData;
+}
+
+function array_match_check(arr1, arr2) {
+  var arrCheck = false;
+  for (var i = 0; i < arr1.length; i++) {
+    if(arr2.indexOf(arr1[i]) >= 0) {
+      arrCheck = true;
+      break;
+    }
+  }
+  return arrCheck;
+}
+</script>
+
+<div class="search-box">
+        <span class="search-box_title">絞り込み条件のタイトル：</span>
+	<label><input type="radio" name="shop" value="">全て</label>
+ <label><input type="radio" name="shop" value="shop1">絞り込み条件1</label><label><input type="radio" name="shop" value="shop2">絞り込み条件2</label><label><input type="radio" name="shop" value="shop3">絞り込み条件3</label><label><input type="radio" name="shop" value="shop4">絞り込み条件4</label>
+</div>
+<div class="search-box">
+	<span class="search-box_title">絞り込み条件のタイトル：</span>
+	<label><input type="checkbox" name="category" value="category1">絞り込み条件a</label><label><input type="checkbox" name="category" value="category2">絞り込み条件b</label><label><input type="checkbox" name="category" value="category3">絞り込み条件c</label><label><input type="checkbox" name="category" value="category4">絞り込み条件d</label><label><input type="checkbox" name="category" value="category5">絞り込み条件e</label>
+</div>
+<div class="cat_image_all">
+	<div class="cat_image" data-shop="shop1" data-category="category1">
+		<a href="リンク先のURL">
+		<img src="画像のURL" alt="画像の説明">
+		<p class="page_title">テキストリンクのテキスト</p>
+		</a>
+	</div>
+</div>
 <!--kennsaku-->
 	
 <!--地図表示---------------------------------------------------------------------------------------------------------------------------------->
