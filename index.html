@@ -112,7 +112,7 @@
 
 <!--絞り込み検索---------------------------------------------------------------------------------------------------->
 	
-<div class="bg_text"><br>絞り込み検索</div>
+<div class="bg_text"><br><h2>絞り込み検索</h2></div>
 <script>
 var searchBox = '.search-box';
 var searchItem = '.search-box input';
@@ -172,39 +172,29 @@ function array_match_check(arr1, arr2) {
 </script>
 
 <div class="search-box">
-        <span class="search-box_title">絞り込み条件のタイトル：</span>
-	<label><input type="radio" name="shop" value="">全て</label>
- <label><input type="radio" name="shop" value="shop1">絞り込み条件1</label><label><input type="radio" name="shop" value="shop2">絞り込み条件2</label><label><input type="radio" name="shop" value="shop3">絞り込み条件3</label><label><input type="radio" name="shop" value="shop4">絞り込み条件4</label>
+    <span class="search-box_title">価格帯</span>
+    <label><input type="radio" name="shop" value="">全て</label>
+   <label><input type="radio" name="shop" value="shop1">~500円</label>
+   <label><input type="radio" name="shop" value="shop2">500~1000円</label>
+   <label><input type="radio" name="shop" value="shop3">絞り込み条件3</label>
+   <label><input type="radio" name="shop" value="shop4">絞り込み条件4</label>
 </div>
 <div class="search-box">
-	<span class="search-box_title">絞り込み条件のタイトル：</span>
-	<label><input type="checkbox" name="category" value="category1">絞り込み条件a</label><label><input type="checkbox" name="category" value="category2">絞り込み条件b</label><label><input type="checkbox" name="category" value="category3">絞り込み条件c</label><label><input type="checkbox" name="category" value="category4">絞り込み条件d</label><label><input type="checkbox" name="category" value="category5">絞り込み条件e</label>
+  	<span class="search-box_title">絞り込み条件のタイトル：</span>
+  	<label><input type="checkbox" name="category" value="category1">絞り込み条件a</label>
+    <label><input type="checkbox" name="category" value="category2">絞り込み条件b</label>
+    <label><input type="checkbox" name="category" value="category3">絞り込み条件c</label>
+    <label><input type="checkbox" name="category" value="category4">絞り込み条件d</label>
+    <label><input type="checkbox" name="category" value="category5">絞り込み条件e</label>
 </div>
+ <form id="form1" action="isd_cafe_kensakukekka.html" method="get">
+        <input id="sbox1" id="s" name="s" type="text" placeholder="キーワードを入力" />
+         <input id="sbtn1" type="submit" value="検索" />
+    </form>
 <div class="cat_image_all">
-	<div class="cat_image" data-shop="shop1" data-category="category1">
-		<a href="https://tabelog.com/tokyo/A1303/A130301/13051329/">
-		<img src="cafe_pronto.jpg" alt="画像の説明">
-		<p class="page_title">PRONTO宮下公園店</p>
-		</a>
-	</div>
-</div>
-
-<div class="bg_text"><br>フリーワード検索</div>
-		<form id="form1" action="isd_cafe_kensakukekka.html" method="get">
-                <input id="sbox1" id="s" name="s" type="text" placeholder="キーワードを入力" />
-                <input id="sbtn1" type="submit" value="検索" /></form>
-<!--kennsaku-->
 	
-<!--カフェ一覧ここから-->
-<div id="cafe_lists">
-	<section class="ly_section">
-  <div class="ly_section_inner">
-    <h2 class="el_lv2Heading">カフェ一覧</h2>
-    <!-- ここから3カラム記事エリア -->
-    <ul class="card_items">
-      <li>
-        <a class="card_item" href="#">
-          <article>
+  <div class="cat_image" data-shop="shop1" data-category="category1">
+     <article>
             <figure class="card_item_imgWrapper">
               <img src="cafe1.jpg" alt="">
             </figure>
@@ -216,39 +206,15 @@ function array_match_check(arr1, arr2) {
                 〒160-0022 東京都新宿区新宿３丁目１１−６ エクレ新宿 1F
               </h3>
               <p class="card_item_txt">
-                〇Wi-Fi　有<br>
-		〇電源　16口<br>
-		〇全席数　70席<br>
+                Wi-Fi　有<br>
+    電源　16口<br>
+    全席数　70席<br>
               </p>
             </div>
-          </article>
-        </a>
-      </li>
-      <li>
-        <a class="card_item" href="#">
-          <article>
-            <figure class="card_item_imgWrapper">
-              <img src="cafe_miyama.jpg" alt="">
-            </figure>
-            <div class="card_item_body">
-              <time datetime="2021-04-30" class="card_item_time">
-                Cafe Miyama　渋谷東口駅前店
-              </time>
-              <h3 class="card_item_ttl">
-		〒151-0053 東京都渋谷区代々木２丁目８−５ 新宿南口ビル B1F
-              </h3>
-              <p class="card_item_txt">
-                〇Wi-Fi　有<br>
-		〇電源　18口<br>
-		〇全席数　61席<br>
-              </p>
-            </div>
-          </article>
-        </a>
-      </li>
-       <li>
-        <a class="card_item" href="#">
-          <article>
+    </article>
+  </div>
+  <div class="cat_image" data-shop="shop2" data-category="category2">
+    <article>
             <figure class="card_item_imgWrapper">
               <img src="cafe_pronto.jpg" alt="">
             </figure>
@@ -257,20 +223,38 @@ function array_match_check(arr1, arr2) {
                PRONTO渋谷宮下公園店
               </time>
               <h3 class="card_item_ttl">
-		〒150-0002 東京都渋谷区渋谷１丁目１６−１４ メトロプラザ １階
+    〒150-0002 東京都渋谷区渋谷１丁目１６−１４ メトロプラザ １階
               </h3>
               <p class="card_item_txt">
-                〇Wi-Fi　有<br>
-		〇電源　10口<br>
-		〇全席数　64席<br>
+                Wi-Fi　有<br>
+    電源　10口<br>
+    全席数　64席<br>
               </p>
             </div>
-          </article>
-        </a>
-      </li>
-       <li>
-        <a class="card_item" href="#">
-          <article>
+    </article>
+  </div>
+  <div class="cat_image" data-shop="shop2" data-category="category3">
+    <article>
+            <figure class="card_item_imgWrapper">
+              <img src="cafe_miyama.jpg" alt="">
+            </figure>
+            <div class="card_item_body">
+              <time datetime="2021-04-30" class="card_item_time">
+                Cafe Miyama　渋谷東口駅前店
+              </time>
+              <h3 class="card_item_ttl">
+    〒151-0053 東京都渋谷区代々木２丁目８−５ 新宿南口ビル B1F
+              </h3>
+              <p class="card_item_txt">
+                Wi-Fi　有<br>
+    電源　18口<br>
+    全席数　61席<br>
+              </p>
+            </div>
+     </article>
+  </div>
+  <div class="cat_image" data-shop="shop2" data-category="category3">
+    <article>
             <figure class="card_item_imgWrapper">
               <img src="cafe_derepe.jpg" alt="">
             </figure>
@@ -279,67 +263,63 @@ function array_match_check(arr1, arr2) {
                 CAFE DE REPE
               </time>
               <h3 class="card_item_ttl">
-		〒150-0043 東京都渋谷区道玄坂１丁目３−３ 楠本ビル B1F
+    〒150-0043 東京都渋谷区道玄坂１丁目３−３ 楠本ビル B1F
               </h3>
               <p class="card_item_txt">
-                〇Wi-Fi　有<br>
-		〇電源　10口<br>
-		〇全席数　44席<br>
+                Wi-Fi　有<br>
+    電源　10口<br>
+    全席数　44席<br>
               </p>
             </div>
           </article>
-        </a>
-      </li>
-       <li>
-        <a class="card_item" href="#">
-          <article>
-            <figure class="card_item_imgWrapper">
-              <img src="cafe_ルノアール.jpg" alt="">
-            </figure>
-            <div class="card_item_body">
-              <time datetime="2021-04-30" class="card_item_time">
-                ルノアール渋谷南口店
-              </time>
-              <h3 class="card_item_ttl">
-		〒150-0031 東京都渋谷区桜丘町１５−１５ ＮＫＧ東京第２ビル 2F
-              </h3>
-              <p class="card_item_txt">
-		〇Wi-Fi　有<br>
-		〇電源　12口<br>
-		〇全席数　97席<br>
-              </p>
-            </div>
-          </article>
-        </a>
-      </li>
-       <li>
-        <a class="card_item" href="#">
-          <article>
-            <figure class="card_item_imgWrapper">
-              <img src="cafe_excelcior.jpg" alt="">
-            </figure>
-            <div class="card_item_body">
-              <time datetime="2021-04-30" class="card_item_time">
-                EXCELSIOR CAFFE渋谷宮益坂店
-              </time>
-              <h3 class="card_item_ttl">
-                〒150-0002 東京都渋谷区渋谷１丁目１４−８ １Ｆ・２Ｆ 宮益ＳＫビル
-              </h3>
-              <p class="card_item_txt">
-		〇Wi-Fi　有<br>
-		〇電源　18口<br>
-		〇全席数　54席<br>
-              </p>
-            </div>
-          </article>
-        </a>
-      </li>
-      <!-- 以下省略 -->
-    </ul>
-    <!-- 3カラム記事エリアここまで -->
-  </div>
-</section>
+    </div>
+    <div class="cat_image" data-shop="shop2" data-category="category3">
+      <article>
+              <figure class="card_item_imgWrapper">
+                <img src="cafe_ルノアール.jpg" alt="">
+              </figure>
+              <div class="card_item_body">
+                <time datetime="2021-04-30" class="card_item_time">
+                  ルノアール渋谷南口店
+                </time>
+                <h3 class="card_item_ttl">
+      〒150-0031 東京都渋谷区桜丘町１５−１５ ＮＫＧ東京第２ビル 2F
+                </h3>
+                <p class="card_item_txt">
+      Wi-Fi　有<br>
+      電源　12口<br>
+      全席数　97席<br>
+                </p>
+              </div>
+            </article>
+    </div>
+    <div class="cat_image" data-shop="shop2" data-category="category3">
+      <article>
+              <figure class="card_item_imgWrapper">
+                <img src="cafe_excelcior.jpg" alt="">
+              </figure>
+              <div class="card_item_body">
+                <time datetime="2021-04-30" class="card_item_time">
+                  EXCELSIOR CAFFE渋谷宮益坂店
+                </time>
+                <h3 class="card_item_ttl">
+                  〒150-0002 東京都渋谷区渋谷１丁目１４−８ １Ｆ・２Ｆ 宮益ＳＫビル
+                </h3>
+                <p class="card_item_txt">
+      Wi-Fi　有<br>
+      電源　18口<br>
+      全席数　54席<br>
+                </p>
+              </div>
+            </article>
+   </div>
 </div>
+
+
+<!--kennsaku-->
+
+<!--カフェ一覧ここから-->
+
 
 <!--カフェ一覧ここまで-->
 
@@ -348,7 +328,7 @@ function array_match_check(arr1, arr2) {
 	<a href="https://www.tus.ac.jp/idm/">東京理科大学　経営学部　国際デザイン経営学科</a><p>2年　チーム23_フォークはむ</p>
 </footer>
 <!--フッターここまで-->
-<script src="絞り込み"></script>
+
 </body>
 
 </html>
