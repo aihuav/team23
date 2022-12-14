@@ -242,15 +242,15 @@ div ul li a:hover {
 }
  
 .card_item_body > .card_item_time {
-  font-size: 15px;
+  font-size: 25px;
   margin-bottom: 5px;
+  font-weight: bold;
   display: block;
 }
  
 .card_item_body > .card_item_ttl {
   color: #333;
   font-size: 15px;
-  font-weight: bold;
   line-height: 1.5;
   margin-bottom: 5px;
   overflow-x: hidden;
