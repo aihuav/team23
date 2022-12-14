@@ -346,19 +346,30 @@ div .view_map {
 	width: 700px;
 }
 
+div#cafe_result {
+	background-color: #F3F3F0;
+	margin: 20px 5px 0px 5px;
+}
+
+div#cafe_result h1{
+	text-align: center;
+	border-bottom: solid 2px #B19956;
+	padding-bottom: 5px;
+}
+
 article.cafelist {
 	width: 800px;
-	margin: 40px;
-	padding: 10px;
-	border-top: 2px solid #B19956;
-	border-bottom: 2px solid #B19956;
+	margin: 10px 40px 10px 40px;
+	padding: 10px 60px 10px 60px;
+	font-size: 14px;
 	margin-left: auto;
 	margin-right: auto;
+
 }
 
 article.cafelist img{
 	width: 300px;
-	height: 200px;
+	height: 230px;
 	margin: 15px;
 }
 
@@ -368,7 +379,18 @@ article div.cafe_exp {
 }
 
 article.cafelist h2 {
+	width: 760px;
 	font-weight: bold;
+	border-bottom: dotted 3px #B19956;
+}
+
+article.cafelist h3 {
+	margin: 10px 10px 10px 0;
+}
+
+article.cafelist a {
+	margin-right: 10px;
+	text-decoration: none;
 }
 
 iframe {
@@ -376,6 +398,8 @@ iframe {
 	width: 250px;
 	height: 250px;
 }
+
+
 
 
 
