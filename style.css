@@ -246,6 +246,11 @@ div ul li a:hover {
   font-weight: bold;
   display: block;
 }
+
+.card_item_body > .card_item_time a {
+  text-decoration: none;
+  font-color: black
+}
  
 .card_item_body > .card_item_ttl {
   color: #333;
