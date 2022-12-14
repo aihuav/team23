@@ -100,6 +100,13 @@
               .setContent("PRONT 渋谷宮下公園店")
               .openOn(map);
     });
+　　var popup = L.popup();
+    L.marker([35.7014114, 139.7462131]).addTo(map).on('click', function (e) {
+          popup
+              .setLatLng(e.latlng)
+              .setContent("珈琲館飯田橋店")
+              .openOn(map);
+    });
   </script>
 
 <!--メイン画像ここまで-->
