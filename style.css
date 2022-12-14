@@ -86,11 +86,10 @@ div p {
 }
 
 
-div h3 {
+div.cat_image h3 {
 	text-align: center;
 	margin: 45px 0 30px 0;
 	padding: 0 20px;
-	font-size: 30px;
 }
 
 
@@ -346,3 +345,36 @@ form {
 div .view_map {
 	width: 700px;
 }
+
+article.cafelist {
+	width: 800px;
+	margin: 40px;
+	padding: 10px;
+	border: 2px solid #B19956;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+article.cafelist img{
+	width: 300px;
+	height: 200px;
+	margin: 15px;
+}
+
+article div.cafe_exp {
+	padding: 20px;
+	text-align: left;
+}
+
+article.cafelist h2 {
+	font-weight: bold;
+}
+
+iframe {
+	margin-left: 100px;
+	width: 270px;
+	height: 270px;
+}
+
+
+
