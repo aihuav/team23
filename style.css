@@ -348,7 +348,10 @@ form {
 
 
 div .view_map {
-	width: 700px;
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 15px;
 }
 
 div#cafe_result {
