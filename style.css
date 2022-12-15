@@ -354,6 +354,10 @@ div .view_map {
 	margin-top: 15px;
 }
 
+div.search-box {
+	font-size: 16px;
+}
+
 div#cafe_result {
 	background-color: #F3F3F0;
 	margin: 20px 5px 0px 5px;
