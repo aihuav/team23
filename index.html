@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <title>ノマドカフェ検索サイト</title>
+ <meta name="description" content="">
+ <meta name="keywords" content="">
+ <meta name="author" content="">
+ <meta charset="utf-8">
+ <link rel="stylesheet" media="all" href="style.css" type="text/css">
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+ <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
+</head>
+
+<body>
+	<!--ヘッダーここから-->
+	<header>
+ 		<h1>ノマドカフェ検索サイト</h1>
+ 		<h2>条件に合わせた作業カフェを探せるサイトです。</h2>
+ 		<nav>
+ 			<ul>
+  				<li><a href="index.html">トップページ</a></li>
+  				<li><a href="cafe_list.html">一覧を見る</a></li>
+			</ul>
+
+		</nav>
+
+	</header>
+<!--ヘッダーここまで-->
+
+<!---->
+<!--地図表示---------------------------------------------------------------------------------------------------------------------------------->
+<div>
+	<h2>Wi-Fi、電源がある都内のカフェの検索ができます。2022年12月14日現在</h2>
+
+</div>
+<div id="view_map" style="height: 350px;"></div>
+    <script type="text/javascript">
+    //緯度,経度,ズーム
+    var map = L.map('view_map').setView([35.658577, 139.745451], 12);
+    // OpenStreetMap から地図画像を読み込む
+    L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, '
+    }).addTo(map);
+    
+    var popup = L.popup();
+    L.marker([35.6575529, 139.7040404]).addTo(map).on('click', function (e) {
+          popup
+              .setLatLng(e.latlng)
+              .setContent("CAFE de CRIE 渋谷三丁目店")
+              .openOn(map);
+    });
+    var popup = L.popup();
+    L.marker([35.6574409, 139.7031387]).addTo(map).on('click', function (e) {
+          popup
+              .setLatLng(e.latlng)
+              .setContent("DEAN & DELUCA 渋谷ストリーム店")
+              .openOn(map);
+    });
+    var popup = L.popup();
+    L.marker([35.6598515, 139.7029622]).addTo(map).on('click', function (e) {
+          popup
+              .setLatLng(e.latlng)
+              .setContent("EXCELSIOR CAFE 渋谷宮益坂店")
+              .openOn(map);
+    });
+    var popup = L.popup();
+    L.marker([35.6560142, 139.7015258]).addTo(map).on('click', function (e) {
+          popup
+              .setLatLng(e.latlng)
+              .setContent("ルノアール　渋谷南口店")
+              .openOn(map);
+    });
+    var popup = L.popup();
+    L.marker([35.6564327, 139.7054596]).addTo(map).on('click', function (e) {
+          popup
+              .setLatLng(e.latlng)
+              .setContent("STARBUCKS 渋谷三丁目店")
+              .openOn(map);
+    });
+    var popup = L.popup();
+    L.marker([35.6577223, 139.7027338]).addTo(map).on('click', function (e) {
+          popup
+              .setLatLng(e.latlng)
+              .setContent("Cafe Miyama 渋谷東口駅前店")
+              .openOn(map);
+    });
+    var popup = L.popup();
+    L.marker([35.6581383, 139.7001468]).addTo(map).on('click', function (e) {
+          popup
+              .setLatLng(e.latlng)
+              .setContent("CAFE DE REPE")
+              .openOn(map);
+    });
+    var popup = L.popup();
+    L.marker([35.6615554, 139.7024669]).addTo(map).on('click', function (e) {
+          popup
+              .setLatLng(e.latlng)
+              .setContent("PRONT 渋谷宮下公園店")
+              .openOn(map);
+    });
+　　var popup = L.popup();
+    L.marker([35.7014114, 139.7462131]).addTo(map).on('click', function (e) {
+          popup
+              .setLatLng(e.latlng)
+              .setContent("珈琲館飯田橋店")
+              .openOn(map);
+    });
+　　var popup = L.popup();
+    L.marker([35.702658603347246, 139.7438465553581]).addTo(map).on('click', function (e) {
+          popup
+              .setLatLng(e.latlng)
+              .setContent("プロント飯田橋店")
+              .openOn(map);
+    });
+　　var popup = L.popup();
+    L.marker([35.70065320904532, 139.74249436885074]).addTo(map).on('click', function (e) {
+          popup
+              .setLatLng(e.latlng)
+              .setContent("STARBUCKS 神楽坂下店")
+              .openOn(map);
+    });
+　　var popup = L.popup();
+    L.marker([35.701198994890504, 139.74676295535815]).addTo(map).on('click', function (e) {
+          popup
+              .setLatLng(e.latlng)
+              .setContent("カフェ・ド・クリエ　飯田橋東口店")
+              .openOn(map);
+    });
+　　var popup = L.popup();
+    L.marker([35.70302454483644, 139.74022713023714]).addTo(map).on('click', function (e) {
+          popup
+              .setLatLng(e.latlng)
+              .setContent("上島珈琲店　神楽坂店")
+              .openOn(map);
+    });
+　　var popup = L.popup();
+    L.marker([35.701071382621954, 139.74709431302972]).addTo(map).on('click', function (e) {
+          popup
+              .setLatLng(e.latlng)
+              .setContent("サンマルクカフェ　飯田橋東口店")
+              .openOn(map);
+    });
+　　var popup = L.popup();
+    L.marker([35.69922935729219, 139745212697577]).addTo(map).on('click', function (e) {
+          popup
+              .setLatLng(e.latlng)
+              .setContent("ルノアール　飯田橋西口店")
+              .openOn(map);
+    });
+　　var popup = L.popup();
+    L.marker([35.6991864469717, 139.74354003446462]).addTo(map).on('click', function (e) {
+          popup
+              .setLatLng(e.latlng)
+              .setContent("春水堂　飯田橋サクラテラス店")
+              .openOn(map);
+    });
+　　var popup = L.popup();
+    L.marker([35.70200055515667, 139.73931915350792]).addTo(map).on('click', function (e) {
+          popup
+              .setLatLng(e.latlng)
+              .setContent("カフェ・ベローチェ神楽坂店")
+              .openOn(map);
+    });
+   
+  </script>
+
+<!--メイン画像ここまで-->
+
+<!--kennsaku-->
+
+<!--絞り込み検索---------------------------------------------------------------------------------------------------->
+	
+<div class="bg_text"><br><h4>絞り込み検索</h4></div>
+<script>
+var searchBox = '.search-box';
+var searchItem = '.search-box input';
+var listItem = '.cat_image';
+var hideClass = 'is-hide';
+
+$(function() {
+   $(document).on('change', searchBox + ' input', function() {
+    search_filter();
+  });
+});
+
+function search_filter() {
+  $(listItem).removeClass(hideClass);
+  for (var i = 0; i < $(searchBox).length; i++) {
+    var name = $(searchBox).eq(i).find('input').attr('name');
+    var searchData = get_selected_input_items(name);
+    if(searchData.length === 0 || searchData[0] === '') {
+      continue;
+    }
+    for (var j = 0; j < $(listItem).length; j++) {
+      var itemData = get_setting_values_in_item($(listItem).eq(j), name);
+      var check = array_match_check(itemData, searchData);
+      if(!check) {
+        $(listItem).eq(j).addClass(hideClass);
+      }
+    }
+  }
+}
+
+function get_selected_input_items(name) {
+  var searchData = [];
+  $('[name=' + name + ']:checked').each(function() {
+    searchData.push($(this).val());
+  });
+  return searchData;
+}
+
+function get_setting_values_in_item(target, data) {
+  var itemData = target.data(data);
+  if(!Array.isArray(itemData)) {
+    itemData = [itemData];
+  }
+  return itemData;
+}
+
+function array_match_check(arr1, arr2) {
+  var arrCheck = false;
+  for (var i = 0; i < arr1.length; i++) {
+    if(arr2.indexOf(arr1[i]) >= 0) {
+      arrCheck = true;
+      break;
+    }
+  }
+  return arrCheck;
+}
+</script>
+
+<div class="search-box">
+    <span class="search-box_title">価格帯</span>
+    <label><input type="radio" name="shop" value="">全て</label>
+   <label><input type="radio" name="shop" value="shop1">~500円</label>
+   <label><input type="radio" name="shop" value="shop2">500~1000円</label>
+   <label><input type="radio" name="shop" value="shop3">1000~2000円</label>
+   <label><input type="radio" name="shop" value="shop4">2000円~</label>
+</div>
+<div class="search-box">
+  	<span class="search-box_title">検索条件：</span>
+  	<label><input type="checkbox" name="category" value="category1">WiFi</label>
+    <label><input type="checkbox" name="category" value="category2">電源</label>
+    <label><input type="checkbox" name="category" value="category3">禁煙</label>
+    <label><input type="checkbox" name="category" value="category4">喫煙スペース有</label>
+    <label><input type="checkbox" name="category" value="category5">カウンター席有</label>
+</div>
+ <form id="form1" action="index_shiborikomi.html" method="get">
+        <input id="sbox1" id="s" name="s" type="text" placeholder="キーワードを入力" />
+         <input id="sbtn1" type="submit" value="検索" />
+    </form>
+<div class="cat_image_all">
+	
+  <div class="cat_image" data-shop="shop1" data-category="category1">
+     <article>
+            <figure class="card_item_imgWrapper">
+              <img src="cafe1.jpg" alt="">
+            </figure>
+            <div class="card_item_body">
+              <time datetime="2021-04-30" class="card_item_time">
+                <a href="cafe_stb.html">STARBUCKS渋谷3丁目店</a>
+              </time>
+              <h3 class="card_item_ttl">
+                〒160-0022 東京都新宿区新宿３丁目１１−６ エクレ新宿 1F
+              </h3>
+              <p class="card_item_txt">
+                Wi-Fi　有<br>
+    電源　16口<br>
+    全席数　70席<br>
+喫煙席　無<br>
+              </p>
+            </div>
+    </article>
+  </div>
+  <div class="cat_image" data-shop="shop2" data-category="category2">
+    <article>
+            <figure class="card_item_imgWrapper">
+              <img src="cafe_pronto.jpg" alt="">
+            </figure>
+            <div class="card_item_body">
+              <time datetime="2021-04-30" class="card_item_time">
+               PRONTO渋谷宮下公園店
+              </time>
+              <h3 class="card_item_ttl">
+    〒150-0002 東京都渋谷区渋谷１丁目１６−１４ メトロプラザ １階
+              </h3>
+              <p class="card_item_txt">
+                Wi-Fi　有<br>
+    電源　10口<br>
+    全席数　64席<br>
+喫煙席　有（分煙）<br>
+              </p>
+            </div>
+    </article>
+  </div>
+  <div class="cat_image" data-shop="shop2" data-category="category3">
+    <article>
+            <figure class="card_item_imgWrapper">
+              <img src="cafe_miyama.jpg" alt="">
+            </figure>
+            <div class="card_item_body">
+              <time datetime="2021-04-30" class="card_item_time">
+                Cafe Miyama　渋谷東口駅前店
+              </time>
+              <h3 class="card_item_ttl">
+    〒151-0053 東京都渋谷区代々木２丁目８−５ 新宿南口ビル B1F
+              </h3>
+              <p class="card_item_txt">
+                Wi-Fi　有<br>
+    電源　18口<br>
+    全席数　61席<br>
+　　喫煙席　24席<br>
+              </p>
+            </div>
+     </article>
+  </div>
+  <div class="cat_image" data-shop="shop2" data-category="category3">
+    <article>
+            <figure class="card_item_imgWrapper">
+              <img src="cafe_derepe.jpg" alt="">
+            </figure>
+            <div class="card_item_body">
+              <time datetime="2021-04-30" class="card_item_time">
+                CAFE DE REPE
+              </time>
+              <h3 class="card_item_ttl">
+    〒150-0043 東京都渋谷区道玄坂１丁目３−３ 楠本ビル B1F
+              </h3>
+              <p class="card_item_txt">
+                Wi-Fi　有<br>
+               電源　10口<br>
+    全席数　44席<br>
+		      喫煙席　有<br>
+              </p>
+            </div>
+          </article>
+    </div>
+    <div class="cat_image" data-shop="shop2" data-category="category3">
+      <article>
+              <figure class="card_item_imgWrapper">
+                <img src="cafe_ルノアール.jpg" alt="">
+              </figure>
+              <div class="card_item_body">
+                <time datetime="2021-04-30" class="card_item_time">
+                  ルノアール渋谷南口店
+                </time>
+                <h3 class="card_item_ttl">
+      〒150-0031 東京都渋谷区桜丘町１５−１５ ＮＫＧ東京第２ビル 2F
+                </h3>
+                <p class="card_item_txt">
+      Wi-Fi　有<br>
+      電源　12口<br>
+      全席数　97席<br>
+			喫煙席　38席<br>
+                </p>
+              </div>
+            </article>
+    </div>
+    <div class="cat_image" data-shop="shop2" data-category="category3">
+      <article>
+              <figure class="card_item_imgWrapper">
+                <img src="cafe_excelcior.jpg" alt="">
+              </figure>
+              <div class="card_item_body">
+                <time datetime="2021-04-30" class="card_item_time">
+                  EXCELSIOR CAFFE渋谷宮益坂店
+                </time>
+                <h3 class="card_item_ttl">
+                  〒150-0002 東京都渋谷区渋谷１丁目１４−８ １Ｆ・２Ｆ 宮益ＳＫビル
+                </h3>
+                <p class="card_item_txt">
+      Wi-Fi　有<br>
+      電源　18口<br>
+      全席数　54席<br>
+			喫煙席　23席<br>
+                </p>
+              </div>
+            </article>
+   </div>
+	    <div class="cat_image" data-shop="shop2" data-category="category3">
+      <article>
+              <figure class="card_item_imgWrapper">
+                <img src="珈琲館飯田橋店.jpg" alt="">
+              </figure>
+              <div class="card_item_body">
+                <time datetime="2021-04-30" class="card_item_time">
+                  珈琲館飯田橋店
+                </time>
+                <h3 class="card_item_ttl">
+                  〒102-0072 東京都千代田区飯田橋4-8-13
+                </h3>
+                <p class="card_item_txt">
+      Wi-Fi　有<br>
+      電源　14口<br>
+      全席数　60席<br>
+	喫煙席　無<br>
+                </p>
+              </div>
+            </article>
+   </div>
+ <div class="cat_image" data-shop="shop2" data-category="category3">
+      <article>
+              <figure class="card_item_imgWrapper">
+                <img src="プロント飯田橋店.jpg" alt="">
+              </figure>
+              <div class="card_item_body">
+                <time datetime="2021-04-30" class="card_item_time">
+                  プロント飯田橋店
+                </time>
+                <h3 class="card_item_ttl">
+                  〒162-0824 東京都新宿区揚場町1-11　飯田橋中央ビルB1F
+                </h3>
+                <p class="card_item_txt">
+      Wi-Fi 有<br>
+      電源　3口<br>
+      全席数　89席<br>
+	喫煙席　有<br>
+                </p>
+	      </div>
+            </article>
+   </div>	
+ <div class="cat_image" data-shop="shop2" data-category="category3">
+      <article>
+              <figure class="card_item_imgWrapper">
+                <img src="スタバ飯田橋.jpg" alt="">
+              </figure>
+              <div class="card_item_body">
+                <time datetime="2021-04-30" class="card_item_time">
+                  スターバックスコーヒー神楽坂下店
+                </time>
+                <h3 class="card_item_ttl">
+                  〒162-0825 東京都新宿区神楽坂1-9-2　秀永ビル1F・2F
+                </h3>
+                <p class="card_item_txt">
+			Wi-Fi 有<br>
+      電源　21口<br>
+      全席数　60席<br>
+	喫煙席　無<br>
+                </p>
+	      </div>
+            </article>
+   </div>
+	<div class="cat_image" data-shop="shop2" data-category="category3">
+      <article>
+              <figure class="card_item_imgWrapper">
+                <img src="CAFE de CRIE.jpg" alt="">
+              </figure>
+              <div class="card_item_body">
+                <time datetime="2021-04-30" class="card_item_time">
+                  カフェ・ド・クリエ　飯田橋東口店
+                </time>
+                <h3 class="card_item_ttl">
+                  〒102-0072 東京都千代田区飯田橋4-7-1  ロックビレイビル
+                </h3>
+                <p class="card_item_txt">
+			Wi-Fi 有<br>
+      電源　8口<br>
+      全席数　61席<br>
+			喫煙席　21席<br>
+                </p>
+	      </div>
+            </article>
+   </div>
+	<div class="cat_image" data-shop="shop2" data-category="category3">
+      <article>
+              <figure class="card_item_imgWrapper">
+                <img src="上島珈琲.jpg" alt="">
+              </figure>
+              <div class="card_item_body">
+                <time datetime="2021-04-30" class="card_item_time">
+                  上島珈琲店　神楽坂店
+                </time>
+                <h3 class="card_item_ttl">
+                  〒162-0825 東京都新宿区神楽坂3-2　木村屋ビル1F・2F
+                </h3>
+                <p class="card_item_txt">
+			Wi-Fi 有<br>
+      電源　10口<br>
+      全席数　83席<br>
+	喫煙席　無<br>
+                </p>
+	      </div>
+            </article>
+   </div>
+	<div class="cat_image" data-shop="shop2" data-category="category3">
+      <article>
+              <figure class="card_item_imgWrapper">
+                <img src="サンマルク.jpg" alt="">
+              </figure>
+              <div class="card_item_body">
+                <time datetime="2021-04-30" class="card_item_time">
+                  サンマルクカフェ　飯田橋東口店
+                </time>
+                <h3 class="card_item_ttl">
+                  〒102-0072 東京都千代田区飯田橋4-6-10
+                </h3>
+                <p class="card_item_txt">
+			Wi-Fi 有<br>
+      電源　有<br>
+      全席数　88席<br>
+	喫煙席　有<br>
+                </p>
+	      </div>
+            </article>
+   </div>
+	<div class="cat_image" data-shop="shop2" data-category="category3">
+      <article>
+              <figure class="card_item_imgWrapper">
+                <img src="ルノアール.jpg" alt="">
+              </figure>
+              <div class="card_item_body">
+                <time datetime="2021-04-30" class="card_item_time">
+                  ルノアール　飯田橋西口店
+                </time>
+                <h3 class="card_item_ttl">
+                  〒102-0071 東京都千代田区富士見2-2-6　今井ビル　2F
+                </h3>
+                <p class="card_item_txt">
+			Wi-Fi 有<br>
+      電源　13口<br>
+      全席数　94席<br>
+	喫煙席  34席<br>
+                </p>
+	      </div>
+            </article>
+   </div>
+	<div class="cat_image" data-shop="shop2" data-category="category3">
+      <article>
+              <figure class="card_item_imgWrapper">
+                <img src="春水堂.jpg" alt="">
+              </figure>
+              <div class="card_item_body">
+                <time datetime="2021-04-30" class="card_item_time">
+                  春水堂　飯田橋サクラテラス店
+                </time>
+                <h3 class="card_item_ttl">
+                  〒102-0071 東京都千代田区富士見2-10-2　飯田橋グラン・ブルーム　サクラテラス2F
+                </h3>
+                <p class="card_item_txt">
+			Wi-Fi 有<br>
+      電源　10口<br>
+      全席数　49席<br>
+		喫煙席　無<br>
+                </p>
+	      </div>
+            </article>
+   </div>
+	<div class="cat_image" data-shop="shop2" data-category="category3">
+      <article>
+              <figure class="card_item_imgWrapper">
+                <img src="VELOCE.jpg" alt="">
+              </figure>
+              <div class="card_item_body">
+                <time datetime="2021-04-30" class="card_item_time">
+                  カフェ・ベローチェ神楽坂店
+                </time>
+                <h3 class="card_item_ttl">
+                  〒162-0825 東京都新宿区神楽坂4-1-1
+                </h3>
+                <p class="card_item_txt">
+			Wi-Fi 有<br>
+      電源　15口<br>
+      全席数　94席<br>
+	喫煙席　34席<br>
+                </p>
+	      </div>
+            </article>
+   </div>
+</div>
+
+
+<!--kennsaku-->
+
+<!--カフェ一覧ここから-->
+
+
+<!--カフェ一覧ここまで-->
+
+<!--フッターここから-->
+<footer>
+	<a href="https://www.tus.ac.jp/idm/">東京理科大学　経営学部　国際デザイン経営学科</a><p>2年　チーム23_フォークはむ</p>
+</footer>
+<!--フッターここまで-->
+
+</body>
+
+</html>
